@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package data.command;
+option go_package = "data/command";
+
+enum command {
+    ping = 0;
+    login = 1;
+}
