@@ -24,12 +24,9 @@ func main() {
 	flag.StringVar(&out, "o", "", "proto out path")
 	flag.Parse()
 
-	os.RemoveAll(out)
-	os.MkdirAll(out, os.ModePerm)
-
 	switch runtime.GOOS {
 	case "windows":
-		protoc += "protoc_3_13_0_osx_x86_64"
+		protoc += "protoc_3_13_0_win64.exe"
 	case "darwin":
 		protoc += "protoc_3_13_0_osx_x86_64"
 	}
