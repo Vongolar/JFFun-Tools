@@ -5,4 +5,5 @@ option go_package = "data/error";
 
 enum error {
     ok = 0;
+    noHandler = 1;
 }

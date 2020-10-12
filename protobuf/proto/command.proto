@@ -5,5 +5,5 @@ option go_package = "data/command";
 
 enum command {
     ping = 0;
-    login = 1;
+    getOnlinePlayerCount = 1;
 }
