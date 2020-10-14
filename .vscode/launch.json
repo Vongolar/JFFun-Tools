@@ -33,7 +33,7 @@
                 "-pp",
                 "${workspaceRoot}/protobuf/proto/",
                 "-o",
-                "/Users/xuxinwei/Project/JFFun/"
+                "../../JFFun/"
             ]
         },
         {
