@@ -5,5 +5,8 @@ option go_package = "data/error";
 
 enum error {
     ok = 0;
-    noHandler = 1;
+    noHandler = 1; //不支持命令
+    permissionDenied = 2; //操作权限不足
+    decodeError = 3; //消息解析错误
+    noSupportProto = 4; //不支持消息格式
 }
