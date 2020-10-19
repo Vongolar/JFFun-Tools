@@ -7,4 +7,7 @@ enum error {
     ok = 0;
     request = 1; //消息请求错误
     decodeRequest = 2; //消息反序列化错误
+    authority = 3; //用户认证失败
+    permissionDenied = 4; //权限不足
+    noCommand = 5; //没有任务处理器
 }

@@ -10,17 +10,18 @@ import (
 	"strings"
 )
 
-var protoc string
-var protoPath string
+var path string
 var out string
+var protoPath string
+var protoc string
+var tsplugin string
 
 func main() {
 	var cmd string
 	var script string
 	flag.StringVar(&cmd, "cmd", "install", "gen : install protoc-gen-go; gen : gen proto file;")
-	flag.StringVar(&script, "sc", "golang", "golang/javascript")
-	flag.StringVar(&protoc, "p", "", "protoc path")
-	flag.StringVar(&protoPath, "pp", "", "proto files path")
+	flag.StringVar(&script, "sc", "golang", "golang/javascript/typescript")
+	flag.StringVar(&path, "p", "", "protoc path")
 	flag.StringVar(&out, "o", "", "proto out path")
 	flag.Parse()
 
@@ -29,11 +30,15 @@ func main() {
 		os.MkdirAll(out, os.ModePerm)
 	}
 
+	protoPath = path + "prtobuf/proto/"
+
 	switch runtime.GOOS {
 	case "windows":
-		protoc += "protoc_3_13_0_win64.exe"
+		protoc = path + "/protoc/protoc_3_13_0_win64.exe"
+		tsplugin = path + "/node_modules/.bin/protoc-gen-ts_proto.cmd"
 	case "darwin":
-		protoc += "protoc_3_13_0_osx_x86_64"
+		protoc = path + "/protoc/protoc_3_13_0_osx_x86_64"
+		tsplugin = path + "/node_modules/.bin/protoc-gen-ts_proto"
 	}
 
 	switch cmd {
@@ -90,7 +95,7 @@ func gen4javascript() {
 
 func gen4typescript() {
 	walkProto(protoPath, func(file string) {
-		cmd := exec.Command(protoc, "--proto_path="+protoPath, "--plugin=protoc-gen-ts_proto=E://JFFun/JFFun-Tools/node_modules/.bin/protoc-gen-ts_proto.cmd", "--ts_proto_out="+out, file)
+		cmd := exec.Command(protoc, "--proto_path="+protoPath, "--plugin=protoc-gen-ts_proto="+tsplugin, "--ts_proto_out="+out, file)
 		cmd.Stdout = os.Stdout
 		if err := cmd.Run(); err != nil {
 			fmt.Println("生成失败")

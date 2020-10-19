@@ -29,9 +29,7 @@
                 "-sc",
                 "golang",
                 "-p",
-                "${workspaceRoot}/protobuf/protoc/",
-                "-pp",
-                "${workspaceRoot}/protobuf/proto/",
+                "${workspaceRoot}",
                 "-o",
                 "../../JFFun/"
             ]
@@ -49,9 +47,7 @@
                 "-sc",
                 "javascript",
                 "-p",
-                "${workspaceRoot}/protobuf/protoc/",
-                "-pp",
-                "${workspaceRoot}/protobuf/proto/",
+                "${workspaceRoot}",
                 "-o",
                 "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
             ]
@@ -69,9 +65,7 @@
                 "-sc",
                 "typescript",
                 "-p",
-                "${workspaceRoot}/protobuf/protoc/",
-                "-pp",
-                "${workspaceRoot}/protobuf/proto/",
+                "${workspaceRoot}",
                 "-o",
                 "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
             ]
