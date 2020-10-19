@@ -1,2 +1,4 @@
 /protobuf/build/
 /protobuf/gen/
+/node_modules/
+package-lock.json

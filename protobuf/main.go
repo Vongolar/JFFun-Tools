@@ -61,6 +61,8 @@ func gen(script string) {
 		gen4golang()
 	case "javascript":
 		gen4javascript()
+	case "typescript":
+		gen4typescript()
 	}
 }
 
@@ -77,7 +79,18 @@ func gen4golang() {
 
 func gen4javascript() {
 	walkProto(protoPath, func(file string) {
-		cmd := exec.Command(protoc, "--proto_path="+protoPath, "--js_out="+out, file)
+		cmd := exec.Command(protoc, "--proto_path="+protoPath, "--js_out=import_style=commonjs,binary:"+out, file)
+		cmd.Stdout = os.Stdout
+		if err := cmd.Run(); err != nil {
+			fmt.Println("生成失败")
+			fmt.Println(err.Error())
+		}
+	})
+}
+
+func gen4typescript() {
+	walkProto(protoPath, func(file string) {
+		cmd := exec.Command(protoc, "--proto_path="+protoPath, "--plugin=protoc-gen-ts_proto=E://JFFun/JFFun-Tools/node_modules/.bin/protoc-gen-ts_proto.cmd", "--ts_proto_out="+out, file)
 		cmd.Stdout = os.Stdout
 		if err := cmd.Run(); err != nil {
 			fmt.Println("生成失败")

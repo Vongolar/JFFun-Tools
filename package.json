@@ -1,0 +1,22 @@
+{
+  "name": "jffun-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vongolar/JFFun-Tools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vongolar/JFFun-Tools/issues"
+  },
+  "homepage": "https://github.com/Vongolar/JFFun-Tools#readme",
+  "dependencies": {
+    "ts-proto": "^1.38.0"
+  }
+}

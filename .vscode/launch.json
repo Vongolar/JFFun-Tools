@@ -55,6 +55,26 @@
                 "-o",
                 "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
             ]
+        },
+        {
+            "name": "gen for ts",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceRoot}/protobuf/main.go",
+            "env": {},
+            "args": [
+                "-cmd",
+                "gen",
+                "-sc",
+                "typescript",
+                "-p",
+                "${workspaceRoot}/protobuf/protoc/",
+                "-pp",
+                "${workspaceRoot}/protobuf/proto/",
+                "-o",
+                "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
+            ]
         }
     ]
 }
