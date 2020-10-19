@@ -53,7 +53,7 @@
                 "-pp",
                 "${workspaceRoot}/protobuf/proto/",
                 "-o",
-                "${workspaceRoot}/protobuf/gen/js/"
+                "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
             ]
         }
     ]
