@@ -29,7 +29,7 @@
                 "-sc",
                 "golang",
                 "-p",
-                "${workspaceRoot}",
+                "${workspaceRoot}/",
                 "-o",
                 "../../JFFun/"
             ]
@@ -47,7 +47,7 @@
                 "-sc",
                 "javascript",
                 "-p",
-                "${workspaceRoot}",
+                "${workspaceRoot}/",
                 "-o",
                 "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
             ]
@@ -65,7 +65,7 @@
                 "-sc",
                 "typescript",
                 "-p",
-                "${workspaceRoot}",
+                "${workspaceRoot}/",
                 "-o",
                 "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
             ]

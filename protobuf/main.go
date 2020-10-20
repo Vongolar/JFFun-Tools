@@ -30,14 +30,14 @@ func main() {
 		os.MkdirAll(out, os.ModePerm)
 	}
 
-	protoPath = path + "prtobuf/proto/"
+	protoPath = path + "protobuf/proto/"
 
 	switch runtime.GOOS {
 	case "windows":
-		protoc = path + "/protoc/protoc_3_13_0_win64.exe"
+		protoc = path + "protobuf/protoc/protoc_3_13_0_win64.exe"
 		tsplugin = path + "/node_modules/.bin/protoc-gen-ts_proto.cmd"
 	case "darwin":
-		protoc = path + "/protoc/protoc_3_13_0_osx_x86_64"
+		protoc = path + "protobuf/protoc/protoc_3_13_0_osx_x86_64"
 		tsplugin = path + "/node_modules/.bin/protoc-gen-ts_proto"
 	}
 

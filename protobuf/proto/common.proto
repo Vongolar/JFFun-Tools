@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package data.common;
-option go_package = "data/common";
-
-message singleInt64 {
-    int64 count = 1;
-}
