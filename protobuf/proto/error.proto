@@ -6,4 +6,7 @@ option go_package = "data/error";
 enum error {
     ok = 0;
     commandNotAllow = 1;//不接受命令
+    badRequest = 2; //请求错误
+    unauthorized = 3; //身份认证失败
+    undefine = 4; //服务器未知错误
 }
