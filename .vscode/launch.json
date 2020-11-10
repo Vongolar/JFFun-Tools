@@ -13,7 +13,23 @@
             "env": {},
             "args": [
                 "-cmd",
-                "install"
+                "install",
+                "-sc",
+                "golang",
+            ]
+        },
+        {
+            "name": "安装typescript plugin",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceRoot}/protobuf/main.go",
+            "env": {},
+            "args": [
+                "-cmd",
+                "install",
+                "-sc",
+                "typescript",
             ]
         },
         {
@@ -31,10 +47,11 @@
                 "-p",
                 "${workspaceRoot}/",
                 "-o",
-                "../../"
+                "${workspaceRoot}/protobuf/gen/go/"
+                //"../../"
             ]
         },
-        /*{
+        {
             "name": "gen for js",
             "type": "go",
             "request": "launch",
@@ -49,9 +66,9 @@
                 "-p",
                 "${workspaceRoot}/",
                 "-o",
-                "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
+                "${workspaceRoot}/protobuf/gen/js/"
             ]
-        },*/
+        },
         {
             "name": "gen for ts",
             "type": "go",
@@ -67,7 +84,8 @@
                 "-p",
                 "${workspaceRoot}/",
                 "-o",
-                "../../JFFun-Client-CocosCreator/JFFun/assets/data/"
+                "${workspaceRoot}/protobuf/gen/ts/"
+                //"../../JFFun-Client-CocosCreator/JFFun/assets/data/"
             ]
         }
     ]

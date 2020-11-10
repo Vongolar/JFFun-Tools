@@ -43,9 +43,29 @@ func main() {
 
 	switch cmd {
 	case "install":
-		installGo()
+		install(script)
 	case "gen":
 		gen(script)
+	}
+}
+
+func install(script string) {
+	switch script {
+	case "golang":
+		installGo()
+	case "typescript":
+		intallTs()
+	}
+}
+
+func intallTs() {
+	cmd := exec.Command("npm", "install")
+	cmd.Stdout = os.Stdout
+	if err := cmd.Run(); err != nil {
+		fmt.Println("安装失败")
+		fmt.Println(err)
+	} else {
+		fmt.Println("安装成功")
 	}
 }
 
