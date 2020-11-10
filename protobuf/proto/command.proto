@@ -1,8 +1,38 @@
 syntax = "proto3";
 
-package data.command;
-option go_package = "data/command";
+package data.Dcommand;
+option go_package = "JFFun/data/Dcommand";
 
-enum command {
+enum Command {
     ping = 0;
+    newRequest = 1; //新请求
+    authority = 2; //鉴权
+    getPlayerAuth = 3; //获取用户权限
+    bindConn = 4; //绑定长连接
+    unbindConn = 5; //解绑长连接
+    sync = 6; //向用户主动推送信息
+    createGame = 7; //创建游戏
+
+    getGameInfo = 1000; //获取游戏数据
+    gameAct = 1001; //玩家行动
+    gameStateEnd = 1002; //游戏状态结束
+
+    guestLogin = 1003; //游客登陆
+
+    match = 1004; //单人匹配请求
+    matchCancel = 1005; //取消匹配
+    getMatchState = 1006; //获取匹配状态
+    matchSure = 1007; //确认匹配
+    ready = 1008; //游戏准备完毕
+}
+
+enum SyncCommand {
+    _ = 0;
+
+    gameState = 1000; //通知游戏状态
+    gamePlayerAct = 1001; //通知游戏玩家行动
+    
+    matchCheck = 1002; //匹配确认倒计时
+    matchSuccess = 1003; //匹配成功
+    matchFail = 1004; //匹配失败
 }

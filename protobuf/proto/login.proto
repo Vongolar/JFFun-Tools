@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package data.Dlogin;
+option go_package = "JFFun/data/Dlogin";
+
+message GuestLoginReq {
+    string code = 1; //设备识别码
+}
+
+message LoginResp {
+    string token = 1; //鉴权码
+}

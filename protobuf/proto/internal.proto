@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "game.proto";
+
+package data.Dinternal;
+option go_package = "JFFun/data/Dinternal";
+
+message createGameContext {
+    data.Dgame.GameType gameType = 1;
+    repeated string players = 2;
+}

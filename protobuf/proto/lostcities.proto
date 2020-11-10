@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package data.DLostCities;
+option go_package = "JFFun/data/DLostCities";
+
+enum state {
+    deal = 0; //发牌
+    play = 1; //出牌
+    getCard = 2; //获得牌
+    balance = 3; //结算
+}
+
+enum act {
+    _ = 0;
+    invest = 1; //投资
+    drop = 2; //弃牌
+    choose = 3; //选择牌
+    draw = 4; //抽牌
+}
+
+message gameInfo {
+    state state = 1;
+    repeated playerInfo players = 2;
+    repeated dropArea dropArea = 3;
+    int32 deck = 4; 
+    string curPlayer = 5;
+}
+
+message playerInfo {
+    string playerId = 1;
+    repeated card hands = 2; //手牌
+    repeated card table = 3; //出牌区
+}
+
+message dropArea {
+    int32 city = 1;
+    repeated card cards = 2;
+}
+
+message card {
+    int32 city = 1;
+    int32 point = 2;
+}
+
+message cards {
+    repeated card cards = 1;
+}
+
+message balanceResult {
+    repeated score details = 1;
+}
+
+message score {
+    string player = 1;
+    int32 score = 2; //总分
+    repeated int32 details = 3; //各堆得分
+}

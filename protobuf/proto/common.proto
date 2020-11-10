@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "command.proto";
+import "error.proto";
+
+package data.Dcommon;
+option go_package = "JFFun/data/Dcommon";
+
+message Request {
+    int32 id = 1;
+    data.Dcommand.Command cmd = 2;
+    bytes data = 3;
+}
+
+message Response {
+    int32 id = 1;
+    data.Derror.error err = 2;
+    bytes data = 3;
+}
+
+message SyncData {
+    data.Dcommand.SyncCommand scmd = 1;
+    bytes data = 2;
+}

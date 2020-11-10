@@ -1,15 +1,21 @@
 syntax = "proto3";
 
-package data.error;
-option go_package = "data/error";
+package data.Derror;
+option go_package = "JFFun/data/Derror";
 
 enum error {
     ok = 0;
-    commandNotAllow = 1;//不接受命令
-    badRequest = 2; //请求错误
-    unauthorized = 3; //身份认证失败
-    undefine = 4; //服务器未知错误
-    permissionDenied = 5; //权限不足
-    decode = 6; //消息反序列化错误
-    encode = 7; //消息序列化错误
+    badRequest = 1; //错误的消息
+    noHandler = 2; //没有命令的处理方法
+    noAuthority = 3; //权限不足
+    net = 4; //网络问题
+    server = 5; //服务器错误
+    authExpire = 6; //鉴权信息过期
+    noAccount = 7; //用户不存在
+
+    noturn = 1000; //不是玩家的操作阶段
+    noInHand = 1001; //token不在手牌
+    noInDropTop = 1002; //不在弃牌堆顶部
+    invaildInvest = 1003; //非法投资
+    inMatching = 1004; //玩家已在匹配中
 }
